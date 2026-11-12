@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="پەیوەندی بە کۆدستان">
+    <title>کۆدستان | Codeistan</title>
+    <!-- Bootstrap 5 RTL/LTR - Dynamic -->
+    <link rel="stylesheet" id="bootstrap-css"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/translations.js"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/logo.svg" alt="کۆدستان" class="logo-img me-2">
+                <span class="brand-text" data-i18n="brand.text">کۆدستان</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="nav.home">سەرەکی</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.html" data-i18n="nav.courses">کۆرسەکان</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="features.html"
+                            data-i18n="nav.features">تایبەتمەندییەکان</a></li>
+                    <li class="nav-item"><a class="nav-link" href="instructors.html"
+                            data-i18n="nav.instructors">مامۆستاکان</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html"
+                            data-i18n="nav.contact">پەیوەندی</a></li>
+                </ul>
+                <div class="nav-buttons d-flex align-items-center">
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle-btn me-2" id="themeToggle" title="گۆڕینی ڕەنگ">
+                        <i class="bi bi-moon-stars-fill"></i>
+                    </button>
+
+                    <!-- Language Dropdown -->
+                    <div class="dropdown me-3">
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageSelector"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-globe me-1"></i> کوردی
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageSelector">
+                            <li><a class="dropdown-item lang-option" href="#" data-lang="ku">کوردی (Kurdish)</a></li>
+                            <li><a class="dropdown-item lang-option" href="#" data-lang="en">English (ئینگلیزی)</a></li>
+                            <li><a class="dropdown-item lang-option" href="#" data-lang="ar">عربي (Arabic)</a></li>
+                        </ul>
+                    </div>
+
+                    <div id="guestElements" class="d-flex align-items-center">
+                        <a href="#" class="btn btn-outline-light btn-sm me-2" id="loginBtn" data-bs-toggle="modal"
+                            data-bs-target="#authModal" data-i18n="nav.login">چوونەژوورەوە</a>
+                        <a href="#" class="btn btn-primary-custom btn-sm" id="registerBtn" data-bs-toggle="modal"
+                            data-bs-target="#authModal" data-i18n="nav.register">خۆتۆمارکردن</a>
+                    </div>
+                    <div id="authElements" class="d-flex align-items-center" style="display: none !important;">
+                        <div class="dropdown">
+                            <button class="btn btn-outline-light btn-sm dropdown-toggle d-flex align-items-center"
+                                type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle me-2"></i>
+                                <span id="userNameDisplay">User</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end bg-dark border-secondary"
+                                aria-labelledby="userDropdown">
+                                <li><a class="dropdown-item text-white-50 hover-white" href="#"
+                                        data-i18n="nav.profile"><i class="bi bi-person me-2"></i>Profile</a></li>
+                                <li>
+                                    <hr class="dropdown-divider bg-secondary">
+                                </li>
+                                <li><a class="dropdown-item text-danger hover-danger" href="#" id="logoutBtn"
+                                        data-i18n="nav.logout"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">
+                <span data-i18n="contact.title">پەیوەندیمان </span>
+                <span class="gradient-text" data-i18n="contact.highlight">پێوە بکە</span>
+            </h1>
+            <p class="page-description" data-i18n="contact.desc">پرسیارت هەیە؟ ئێمە لێرەین بۆ یارمەتیدانت</p>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="index.html" data-i18n="nav.home">سەرەکی</a></li>
+                    <li class="breadcrumb-item active" data-i18n="nav.contact">پەیوەندی</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-page section-padding">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-5">
+                    <div class="contact-info-card">
+                        <h3 data-i18n="contact.info.title">زانیاری پەیوەندی</h3>
+                        <p data-i18n="contact.info.sub">دەتوانیت لە ڕێگەی هەریەکێک لەم ڕێگایانەوە پەیوەندیمان پێوە
+                            بکەیت.</p>
+
+                        <a href="https://www.google.com/maps?q=36.143635,44.039142" target="_blank"
+                            class="contact-item text-decoration-none">
+                            <div class="contact-icon icon-location"><i class="bi bi-geo-alt"></i></div>
+                            <div class="contact-text">
+                                <h5 data-i18n="contact.addr.title" class="text-white">ناونیشان</h5>
+                                <p data-i18n="contact.addr.text" class="text-white-50">هەولێر، کوردستان<br>شەقامی ١٠٠
+                                    مەترە، نزیک پارکی سامی
+                                    عەبدولڕەحمان</p>
+                            </div>
+                        </a>
+
+                        <div class="contact-item">
+                            <div class="contact-icon icon-email"><i class="bi bi-envelope"></i></div>
+                            <div class="contact-text">
+                                <h5 data-i18n="contact.email.title">ئیمەیڵ</h5>
+                                <p>info@codeistan.com<br>support@codeistan.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon icon-phone"><i class="bi bi-telephone"></i></div>
+                            <div class="contact-text">
+                                <h5 data-i18n="contact.phone.title">تەلەفۆن</h5>
+                                <p dir="ltr">+964 750 123 4567<br>+964 751 987 6543</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon icon-time"><i class="bi bi-clock"></i></div>
+                            <div class="contact-text">
+                                <h5 data-i18n="contact.hours.title">کاتی کار</h5>
+                                <p data-i18n="contact.hours.text">شەممە - پێنجشەممە: ٩ بەیانی - ٦ ئێوارە<br>هەینی:
+                                    داخراوە</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-social">
+                            <h5 data-i18n="footer.social">سۆشیاڵ میدیا</h5>
+                            <div class="social-links">
+                                <a href="https://www.facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+                                <a href="https://www.instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+                                <a href="https://www.youtube.com" target="_blank"><i class="bi bi-youtube"></i></a>
+                                <a href="https://t.me" target="_blank"><i class="bi bi-telegram"></i></a>
+                                <a href="https://web.whatsapp.com" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="contact-form-card">
+                        <h3 data-i18n="contact.form.title">نامەیەکمان بنێرە</h3>
+                        <p data-i18n="contact.form.sub">فۆرمەکە پڕبکەرەوە و ئێمە لە ماوەی ٢٤ کاتژمێردا وەڵامت دەدەینەوە.
+                        </p>
+
+                        <form class="contact-form">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label><i class="bi bi-person"></i> <span
+                                                data-i18n="lbl.name">ناو</span></label>
+                                        <input type="text" class="form-control" placeholder="ناوی تەواوت بنووسە"
+                                            data-i18n="lbl.name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label><i class="bi bi-envelope"></i> <span
+                                                data-i18n="lbl.email">ئیمەیڵ</span></label>
+                                        <input type="email" class="form-control" placeholder="ئیمەیڵەکەت بنووسە"
+                                            data-i18n="lbl.email">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label><i class="bi bi-telephone"></i> <span
+                                                data-i18n="lbl.phone">تەلەفۆن</span></label>
+                                        <input type="tel" class="form-control" placeholder="ژمارەی تەلەفۆن"
+                                            data-i18n="lbl.phone">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label><i class="bi bi-tag"></i> <span
+                                                data-i18n="lbl.subject">بابەت</span></label>
+                                        <select class="form-control">
+                                            <option value="" data-i18n="lbl.subject.default">بابەتێک هەڵبژێرە</option>
+                                            <option value="course" data-i18n="lbl.subject.course">پرسیار دەربارەی کۆرس
+                                            </option>
+                                            <option value="payment" data-i18n="lbl.subject.payment">کێشەی پارەدان
+                                            </option>
+                                            <option value="technical" data-i18n="lbl.subject.tech">کێشەی تەکنیکی
+                                            </option>
+                                            <option value="other" data-i18n="lbl.subject.other">هی تر</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label><i class="bi bi-chat-text"></i> <span
+                                                data-i18n="lbl.message">نامە</span></label>
+                                        <textarea class="form-control" rows="5" placeholder="نامەکەت لێرە بنووسە..."
+                                            data-i18n="lbl.message"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary-custom btn-lg w-100">
+                                        <i class="bi bi-send me-2"></i>
+                                        <span data-i18n="btn.send">ناردنی نامە</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container-fluid p-0">
+            <a href="https://www.google.com/maps?q=36.143635,44.039142" target="_blank"
+                class="map-placeholder text-decoration-none">
+                <i class="bi bi-geo-alt"></i>
+                <p data-i18n="map.placeholder">نەخشەی گووگڵ لێرە دادەنرێ</p>
+            </a>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand"><img src="images/logo.svg" alt="کۆدستان" class="logo-img"><span
+                            class="brand-text" data-i18n="brand.text">کۆدستان</span></div>
+                    <p data-i18n="footer.desc">ناوەندی فێربوونی پرۆگرامینگ بە زمانی کوردی</p>
+                </div>
+                <div class="col-lg-2">
+                    <h5 data-i18n="footer.pages">پەڕەکان</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-i18n="nav.home">سەرەکی</a></li>
+                        <li><a href="courses.html" data-i18n="nav.courses">کۆرسەکان</a></li>
+                        <li><a href="features.html" data-i18n="nav.features">تایبەتمەندییەکان</a></li>
+                        <li><a href="instructors.html" data-i18n="nav.instructors">مامۆستاکان</a></li>
+                        <li><a href="contact.html" data-i18n="nav.contact">پەیوەندی</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 data-i18n="footer.social">سۆشیاڵ میدیا</h5>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.youtube.com" target="_blank"><i class="bi bi-youtube"></i></a>
+                        <a href="https://t.me" target="_blank"><i class="bi bi-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div class="modal fade" id="authModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content auth-modal-content position-relative">
+                <button type="button" class="btn-close auth-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                <div class="modal-body">
+                    <ul class="nav nav-pills nav-fill mb-4" id="authTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="login-tab" data-bs-toggle="pill"
+                                data-bs-target="#login-content" type="button" role="tab">چوونەژوورەوە</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="register-tab" data-bs-toggle="pill"
+                                data-bs-target="#register-content" type="button" role="tab">خۆتۆمارکردن</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="authTabsContent">
+                        <!-- Login Form -->
+                        <div class="tab-pane fade show active" id="login-content" role="tabpanel">
+                            <form id="loginForm">
+                                <div class="mb-3">
+                                    <label class="form-label text-white-50">ئیمەیڵ</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-dark border-secondary text-white-50"><i
+                                                class="bi bi-envelope"></i></span>
+                                        <input type="email" name="email"
+                                            class="form-control bg-dark border-secondary text-white"
+                                            placeholder="name@example.com">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-white-50">وشەی نهێنی</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-dark border-secondary text-white-50"><i
+                                                class="bi bi-lock"></i></span>
+                                        <input type="password" name="password"
+                                            class="form-control bg-dark border-secondary text-white password-input"
+                                            placeholder="******">
+                                        <button
+                                            class="btn btn-outline-secondary bg-dark border-secondary text-white-50 toggle-password"
+                                            type="button">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between mb-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input bg-dark border-secondary" type="checkbox"
+                                            id="rememberMe">
+                                        <label class="form-check-label text-white-50" for="rememberMe">
+                                            بیرت بمێنێت
+                                        </label>
+                                    </div>
+                                    <a href="#" class="text-primary text-decoration-none small">وشەی نهێنیت
+                                        بیرچووە؟</a>
+                                </div>
+                                <button type="submit" class="btn btn-primary-custom w-100">چوونەژوورەوە</button>
+                            </form>
+                        </div>
+                        <!-- Register Form -->
+                        <div class="tab-pane fade" id="register-content" role="tabpanel">
+                            <form id="registerForm">
+                                <div class="mb-3">
+                                    <label class="form-label text-white-50">ناوی تەواو</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-dark border-secondary text-white-50"><i
+                                                class="bi bi-person"></i></span>
+                                        <input type="text" name="name"
+                                            class="form-control bg-dark border-secondary text-white"
+                                            placeholder="ناوی تەواوت بنووسە">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-white-50">ئیمەیڵ</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-dark border-secondary text-white-50"><i
+                                                class="bi bi-envelope"></i></span>
+                                        <input type="email" name="email"
+                                            class="form-control bg-dark border-secondary text-white"
+                                            placeholder="name@example.com">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-white-50">وشەی نهێنی</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-dark border-secondary text-white-50"><i
+                                                class="bi bi-lock"></i></span>
+                                        <input type="password" name="password"
+                                            class="form-control bg-dark border-secondary text-white password-input"
+                                            placeholder="******">
+                                        <button
+                                            class="btn btn-outline-secondary bg-dark border-secondary text-white-50 toggle-password"
+                                            type="button">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input bg-dark border-secondary" type="checkbox"
+                                            id="termsAccept">
+                                        <label class="form-check-label text-white-50" for="termsAccept">
+                                            ڕازیم بە <a href="#" id="termsLink" class="text-primary">مەرج و ڕێساکان</a>
+                                        </label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary-custom w-100">خۆتۆمارکردن</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <p class="text-white-50 small mb-3">یان لەڕێگەی سۆشیاڵ میدیاوە</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-outline-light btn-sm rounded-circle"><i
+                                    class="bi bi-google"></i></button>
+                            <button class="btn btn-outline-light btn-sm rounded-circle"><i
+                                    class="bi bi-facebook"></i></button>
+                            <button class="btn btn-outline-light btn-sm rounded-circle"><i
+                                    class="bi bi-github"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms Modal -->
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-hidden="true" style="z-index: 1060;">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content auth-modal-content text-white">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title">Terms & Conditions / مەرج و ڕێساکان / الشروط والأحكام</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="max-height: 60vh; overflow-y: auto;">
+                    <div class="mb-4">
+                        <h5 class="text-primary mb-3">کوردی</h5>
+                        <ul class="list-unstyled text-white-50">
+                            <li class="mb-2">١. پێویستە هەموو زانیارییەکان بە ڕاست و دروستی تۆمار بکرێن.</li>
+                            <li class="mb-2">٢. بەکارهێنانی هەژمارەکەت لەلایەن کەسی ترەوە قەدەغەیە و دەبێتە هۆی داخستنی
+                                هەژمارەکەت.</li>
+                            <li class="mb-2">٣. هەموو مافەکانی ڤیدیۆ و وانەکان پارێزراون بۆ کۆدستان و بڵاوکردنەوەیان
+                                قەدەغەیە.</li>
+                            <li class="mb-2">٤. ڕێزگرتن لە مامۆستایان و قوتابیانی تر ئەرکە و هەر بێڕێزییەک قەبوڵ ناکرێت.
+                            </li>
+                        </ul>
+                    </div>
+                    <hr class="border-secondary">
+                    <div class="mb-4">
+                        <h5 class="text-primary mb-3">English</h5>
+                        <ul class="list-unstyled text-white-50">
+                            <li class="mb-2">1. All information provided must be accurate and truthful.</li>
+                            <li class="mb-2">2. Sharing your account credentials with others is strictly prohibited and
+                                will result in account suspension.</li>
+                            <li class="mb-2">3. All course materials and videos are copyright of Codeistan; unauthorized
+                                distribution is illegal.</li>
+                            <li class="mb-2">4. Respectful behavior towards instructors and other students is mandatory.
+                            </li>
+                        </ul>
+                    </div>
+                    <hr class="border-secondary">
+                    <div class="mb-4">
+                        <h5 class="text-primary mb-3">عربي</h5>
+                        <ul class="list-unstyled text-white-50">
+                            <li class="mb-2">١. يجب أن تكون جميع المعلومات المسجلة صحيحة ودقيقة.</li>
+                            <li class="mb-2">٢. يمنع منعاً باتاً مشاركة حسابك مع أشخاص آخرين وسيؤدي ذلك إلى إغلاق
+                                الحساب.</li>
+                            <li class="mb-2">٣. جميع حقوق الفيديوهات والدروس محفوظة لكودستان ويمنع نشرها.</li>
+                            <li class="mb-2">٤. احترام المدربين والطلاب الآخرين واجب، ولن يتم التسامح مع أي إساءة.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer border-secondary">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close /
+                        داخستن</button>
+                    <button type="button" class="btn btn-primary-custom" id="termsAgreeBtn">I Agree / رازیم /
+                        موافق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Modal -->
+    <div class="modal fade" id="profileModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content auth-modal-content text-white">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title">Edit Profile / دەستکاری پڕۆفایل</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="profileForm">
+                        <div class="text-center mb-4">
+                            <div class="position-relative d-inline-block">
+                                <img src="https://ui-avatars.com/api/?name=User&background=random"
+                                    id="profileImagePreview" class="rounded-circle border border-2 border-primary"
+                                    style="width: 100px; height: 100px; object-fit: cover;">
+                                <button type="button" id="removeProfileImageBtn"
+                                    class="position-absolute top-0 end-0 btn btn-danger btn-sm rounded-circle p-0 d-flex align-items-center justify-content-center"
+                                    style="width: 24px; height: 24px; transform: translate(25%, -25%); display: none; z-index: 10;">
+                                    <i class="bi bi-x fs-5"></i>
+                                </button>
+                                <label for="profileImageInput"
+                                    class="position-absolute bottom-0 end-0 bg-primary text-white rounded-circle p-2 cursor-pointer"
+                                    style="cursor: pointer; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="bi bi-camera-fill small"></i>
+                                </label>
+                                <input type="file" id="profileImageInput" class="d-none" accept="image/*">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-white-50">Name / ناو</label>
+                            <input type="text" id="profileNameInput"
+                                class="form-control bg-dark border-secondary text-white">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-white-50">Email / ئیمەیڵ</label>
+                            <input type="email" id="profileEmailInput"
+                                class="form-control bg-dark border-secondary text-white-50" disabled>
+                        </div>
+                        <button type="submit" class="btn btn-primary-custom w-100">Save Changes / خەزنکردن</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
